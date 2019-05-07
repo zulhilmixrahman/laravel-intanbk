@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-{{ Form::open(['url' => 'profile-form']) }}
+{{ Form::open(['url' => 'profiles/store']) }}
 <div class="form-group">
     <div class="col">
         {{ Form::label('Nama') }}

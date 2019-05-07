@@ -40,6 +40,6 @@ class ProfileController extends Controller
     // Store submited data to database
     public function store(Request $request)
     {
-
+        dd($request->all());
     }
 }

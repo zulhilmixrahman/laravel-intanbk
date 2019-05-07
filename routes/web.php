@@ -42,3 +42,4 @@ Route::post('profile-form', 'ProfileController@postForm');
 
 Route::get('profiles', 'ProfileController@index');
 Route::get('profiles/create', 'ProfileController@create');
+Route::post('profiles/store', 'ProfileController@store');
