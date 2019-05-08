@@ -50,3 +50,4 @@ Route::post('profiles/update/{id}', 'ProfileController@update');
 Route::get('profiles/delete/{id}', 'ProfileController@destroy');
 
 Route::resource('categories', 'CategoryController');
+Route::resource('tags', 'TagController');
