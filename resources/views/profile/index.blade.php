@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col text-center">
+    <div class="col text-right">
         <a href="{{ url('profiles/create') }}" class="btn btn-primary">New Profile</a>
     </div>
 </div>
@@ -21,7 +21,10 @@
         <td>{{ $loop->iteration }}</td>
         <td>{{ $profile->name }}</td>
         <td>{{ $profile->age }}</td>
-        <td></td>
+        <td class="text-center">
+            <a href="{{ url('profiles/edit/' . $profile->id) }}" class="btn btn-warning">Edit</a>
+            <a href="{{ url('profiles/delete/' . $profile->id) }}" class="btn btn-danger">Delete</a>
+        </td>
     </tr>
     @endforeach
 </table>

@@ -41,5 +41,12 @@ Route::get('profile-form', 'ProfileController@getForm');
 Route::post('profile-form', 'ProfileController@postForm');
 
 Route::get('profiles', 'ProfileController@index');
+Route::get('profiles/all', 'ProfileController@index_all');
+Route::get('profiles/trash', 'ProfileController@trash_bin');
 Route::get('profiles/create', 'ProfileController@create');
 Route::post('profiles/store', 'ProfileController@store');
+Route::get('profiles/edit/{id}', 'ProfileController@edit');
+Route::post('profiles/update/{id}', 'ProfileController@update');
+Route::get('profiles/delete/{id}', 'ProfileController@destroy');
+
+Route::resource('categories', 'CategoryController');
