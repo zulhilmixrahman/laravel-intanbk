@@ -1,7 +1,7 @@
 <div class="form-group">
     <div class="col-2">Date</div>
     <div class="col-4">
-        {!! Form::text('date', old('date'), ['class' => 'form-control datepicker']) !!}
+        {!! Form::text('date', isset($post) ? $post->date->format('d-m-Y') : old('date'), ['class' => 'form-control datepicker']) !!}
     </div>
 </div>
 
@@ -15,7 +15,7 @@
 <div class="form-group">
     <div class="col-2">Post Content</div>
     <div class="col">
-        {!! Form::text('content', old('content'), ['class' => 'form-control']) !!}
+        {!! Form::textarea('content', old('content'), ['class' => 'form-control']) !!}
     </div>
 </div>
 
@@ -30,6 +30,15 @@
     <div class="col-2">Image</div>
     <div class="col">
         {!! Form::file('image') !!}
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-2">Tags</div>
+    <div class="col">
+        @foreach (App\Tag::all() as $tag)
+            {!! Form::checkbox('tags[]', $tag->id) !!} {{ $tag->name }}
+        @endforeach
     </div>
 </div>
 

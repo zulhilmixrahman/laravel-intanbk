@@ -13,6 +13,8 @@
             <th>Date</th>
             <th>Category</th>
             <th>Name</th>
+            <th>Image</th>
+            <th>Tags</th>
             <th>Action button</th>
         </tr>
     </thead>
@@ -20,9 +22,21 @@
     @foreach ($posts as $post)
     <tr>
         <td>{{ ($posts->perPage() * ($posts->currentPage() - 1)) + $loop->iteration }}</td>
-        <td>{{ $post->date }}</td>
-        <td>{{ $post->category_id }}</td>
+        <td>{{ $post->date->format('d-m-Y') }}</td>
+        <td>{{ $post->category->name }}</td>
         <td>{{ $post->title }}</td>
+        <td>
+            @if($post->image != null)
+            <img src="{{ asset($post->image) }}" style="width: 200px;">
+            @endif
+        </td>
+        <td>
+            <ol>
+                @foreach ($post->tags as $tag)
+                    <li>{{ $tag->name }}</li>
+                @endforeach
+            </ol>
+        </td>
         <td class="text-center">
             <!-- Delete Button using submit form -->
             {!! Form::open(['route' => ['posts.destroy', $post->id]]) !!}
