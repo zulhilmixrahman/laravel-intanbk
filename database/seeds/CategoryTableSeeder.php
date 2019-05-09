@@ -16,5 +16,6 @@ class CategoryTableSeeder extends Seeder
         Category::create(['name' => 'Activity']);
         Category::create(['name' => 'Promotion']);
         Category::create(['name' => 'Training']);
+        Category::create(['name' => 'Business']);
     }
 }

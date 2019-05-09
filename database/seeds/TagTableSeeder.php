@@ -16,5 +16,7 @@ class TagTableSeeder extends Seeder
         Tag::create(['name' => 'Religious']);
         Tag::create(['name' => 'Training']);
         Tag::create(['name' => 'Workshop']);
+        Tag::create(['name' => 'Sales']);
+        Tag::create(['name' => 'Sports']);
     }
 }

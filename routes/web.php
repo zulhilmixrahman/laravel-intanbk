@@ -51,3 +51,5 @@ Route::get('profiles/delete/{id}', 'ProfileController@destroy');
 
 Route::resource('categories', 'CategoryController');
 Route::resource('tags', 'TagController');
+
+Route::resource('posts', 'PostController');
